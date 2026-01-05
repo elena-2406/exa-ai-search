@@ -1,0 +1,6 @@
+# Ignore the folder with API key
+.streamlit/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
