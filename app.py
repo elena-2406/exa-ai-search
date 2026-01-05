@@ -40,5 +40,10 @@ if query:
             with st.container():
                 st.markdown(f"### [{result.title}]({result.url})")
                 # Exa results often include a 'score' showing how relevant it is
-                st.write(f"**Relevance Score:** {round(result.score * 100, 2)}%")
+                # Check if score exists before calculating
+                if result.score is not None:
+                    score_pct = round(result.score * 100, 2)
+                    st.write(f"**Relevance Score:** {score_pct}%")
+                else:
+                    st.write("**Relevance Score:** N/A")
                 st.divider()
