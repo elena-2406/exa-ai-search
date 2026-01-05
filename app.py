@@ -27,10 +27,11 @@ query = st.text_input("What are you looking for?", placeholder="e.g., Best resea
 if query:
     with st.spinner("Searching the neural web..."):
         # The search command
+        # The search command
         response = exa.search(
             query, 
             num_results=num_results, 
-            use_autoprompt=True
+            type="magic"  # This replaces use_autoprompt=True
         )
         
         # 5. Displaying Results
