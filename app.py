@@ -56,14 +56,7 @@ with st.sidebar:
     for h in st.session_state.history[:5]:
         st.caption(f"🕒 {h}")
     
-    st.divider()
-    st.subheader("💡 Recommended")
-    # Using buttons as "quick-links" for recommendations
-    if st.button("AI Research Papers"):
-        st.info("Copy-paste: 'Latest AI research papers 2025'")
-    if st.button("Tech Internships"):
-        st.info("Copy-paste: 'Software engineering internships Summer 2026'")
-
+    
 # Main UI
 st.title("🚀 My Custom AI Search")
 st.markdown("Enter a query to search the web using **neural embeddings**.")
