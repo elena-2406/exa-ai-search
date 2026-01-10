@@ -24,6 +24,51 @@ with st.sidebar:
     num_results = st.slider("Number of results", 1, 10, 5)
     st.info("API Key is securely loaded from secrets.")
 
+with st.sidebar:
+    st.title("Search Options")
+    num_results = st.slider("Number of results", 1, 10, 5)
+    
+    if st.button("🗑️ Clear History"):
+        st.session_state.history = []
+        st.rerun()
+
+    st.divider()
+    st.subheader("💡 Guided Search")
+
+    # Category 1: Academic & Research
+    with st.expander("🎓 Academia"):
+        if st.button("AI Research Papers"):
+            st.info("Try: 'Latest advancements in LLM efficiency 2025'")
+        if st.button("Quantum Computing"):
+            st.info("Try: 'Current state of error correction in quantum computing'")
+
+    # Category 2: Career & Skills
+    with st.expander("💼 Career"):
+        if st.button("Tech Internships"):
+            st.info("Try: 'Summer 2026 SDE internships for BTech students'")
+        if st.button("Open Source"):
+            st.info("Try: 'Beginner friendly open source projects for Python'")
+
+    # Category 3: Local & Lifestyle
+    with st.expander("📍 Local (Kochi)"):
+        if st.button("Work Cafes"):
+            st.info("Try: 'Best cafes with high speed wifi in Kochi for working'")
+        if st.button("Tech Events"):
+            st.info("Try: 'Upcoming tech meetups and hackathons in Kerala 2026'")
+
+    st.divider()
+    st.subheader("📜 Recent Searches")
+    for h in st.session_state.history[:5]:
+        st.caption(f"🕒 {h}")
+    
+    st.divider()
+    st.subheader("💡 Recommended")
+    # Using buttons as "quick-links" for recommendations
+    if st.button("AI Research Papers"):
+        st.info("Copy-paste: 'Latest AI research papers 2025'")
+    if st.button("Tech Internships"):
+        st.info("Copy-paste: 'Software engineering internships Summer 2026'")
+
 # Main UI
 st.title("🚀 My Custom AI Search")
 st.markdown("Enter a query to search the web using **neural embeddings**.")
