@@ -17,8 +17,6 @@ except KeyError:
 if "history" not in st.session_state:
     st.session_state.history = []
 
-if query and query not in st.session_state.history:
-    st.session_state.history.insert(0, query)
 
 # Sidebar for simple settings 
 with st.sidebar:
@@ -30,9 +28,11 @@ with st.sidebar:
 st.title("🚀 My Custom AI Search")
 st.markdown("Enter a query to search the web using **neural embeddings**.")
 
-query = st.text_input("What are you looking for?", placeholder="e.g., Best research papers on LLM optimization 2025")
-
+query = st.text_input("What are you looking for?", placeholder="e.g., Best cafes in Kochi")
 if query:
+    if query not in st.session_state.history:
+        st.session_state.history.insert(0,query)
+
     with st.spinner("Searching the neural web..."):
         
         response = exa.search(
