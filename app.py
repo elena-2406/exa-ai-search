@@ -22,11 +22,6 @@ if "history" not in st.session_state:
 with st.sidebar:
     st.title("Search Options")
     num_results = st.slider("Number of results", 1, 10, 5)
-    st.info("API Key is securely loaded from secrets.")
-
-with st.sidebar:
-    st.title("Search Options")
-    num_results = st.slider("Number of results", 1, 10, 5)
     
     if st.button("🗑️ Clear History"):
         st.session_state.history = []
