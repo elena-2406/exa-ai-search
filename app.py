@@ -69,7 +69,7 @@ with st.sidebar:
 st.title("🚀 My Custom AI Search")
 st.markdown("Enter a query to search the web using **neural embeddings**.")
 
-query = st.text_input("What are you looking for?", placeholder="e.g., Best cafes in Kochi")
+query = st.text_input("What are you looking for?", value=st.session_state.search_query, placeholder="e.g., Best cafes in Kochi")
 if query:
     if query not in st.session_state.history:
         st.session_state.history.insert(0,query)
