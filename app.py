@@ -33,23 +33,25 @@ with st.sidebar:
     # Category 1: Academic & Research
     with st.expander("🎓 Academia"):
         if st.button("AI Research Papers"):
-            st.info("Try: 'Latest advancements in LLM efficiency 2025'")
+            st.session_state.search_query = "Latest advancements in LLM efficiency 2025"
+            st.rerun()
         if st.button("Quantum Computing"):
-            st.info("Try: 'Current state of error correction in quantum computing'")
+            st.session_state.search_query = "Current state of error correction in quantum computing"
+            st.rerun()
 
     # Category 2: Career & Skills
     with st.expander("💼 Career"):
         if st.button("Tech Internships"):
-            st.info("Try: 'Summer 2026 SDE internships for BTech students'")
+            st.session_state.search_query ="Summer 2026 SDE internships for BTech students"
         if st.button("Open Source"):
-            st.info("Try: 'Beginner friendly open source projects for Python'")
+            st.session_state.search_query = "Beginner friendly open source projects for Python"
 
     # Category 3: Local & Lifestyle
     with st.expander("📍 Local (Kochi)"):
         if st.button("Work Cafes"):
-            st.info("Try: 'Best cafes with high speed wifi in Kochi for working'")
+            st.session_state.search_query = "Best cafes with high speed wifi in Kochi for working"
         if st.button("Tech Events"):
-            st.info("Try: 'Upcoming tech meetups and hackathons in Kerala 2026'")
+            st.session_state.search_query = "Upcoming tech meetups and hackathons in Kerala 2026"
 
     st.divider()
     st.subheader("📜 Recent Searches")
