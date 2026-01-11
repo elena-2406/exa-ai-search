@@ -17,6 +17,8 @@ except KeyError:
 if "history" not in st.session_state:
     st.session_state.history = []
 
+if "search_query" not in st.session_state:
+    st.session_state.search_query = ""
 
 # Sidebar for simple settings 
 with st.sidebar:
@@ -43,15 +45,19 @@ with st.sidebar:
     with st.expander("💼 Career"):
         if st.button("Tech Internships"):
             st.session_state.search_query ="Summer 2026 SDE internships for BTech students"
+            st.rerun()
         if st.button("Open Source"):
             st.session_state.search_query = "Beginner friendly open source projects for Python"
+            st.rerun()
 
     # Category 3: Local & Lifestyle
     with st.expander("📍 Local (Kochi)"):
         if st.button("Work Cafes"):
             st.session_state.search_query = "Best cafes with high speed wifi in Kochi for working"
+            st.rerun()
         if st.button("Tech Events"):
             st.session_state.search_query = "Upcoming tech meetups and hackathons in Kerala 2026"
+            st.rerun()
 
     st.divider()
     st.subheader("📜 Recent Searches")
